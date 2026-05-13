@@ -1,0 +1,35 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+.windsurf/
+
+# Local agent / cache state
+.claude/
+.cache/
+tmp/
+
+# Anything that could carry secrets — belt and suspenders
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+
+# Python (in case anyone adds scripts later)
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+
+# Build artifacts
+node_modules/
+dist/
+build/

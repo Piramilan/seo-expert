@@ -1,0 +1,93 @@
+name: Verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  structure:
+    name: Skill structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify SKILL.md frontmatter
+        run: |
+          if ! head -1 SKILL.md | grep -q '^---$'; then
+            echo "::error::SKILL.md must start with YAML frontmatter (---)"
+            exit 1
+          fi
+          if ! awk '/^---$/{c++} c==1{print} c>=2{exit}' SKILL.md | grep -q '^name: seo-expert$'; then
+            echo "::error::SKILL.md frontmatter must declare name: seo-expert"
+            exit 1
+          fi
+          if ! awk '/^---$/{c++} c==1{print} c>=2{exit}' SKILL.md | grep -q '^description:'; then
+            echo "::error::SKILL.md frontmatter must include a description"
+            exit 1
+          fi
+          echo "SKILL.md frontmatter OK"
+
+      - name: Verify required files exist
+        run: |
+          set -e
+          for f in \
+            SKILL.md \
+            INSTALL.md \
+            LICENSE \
+            CHANGELOG.md \
+            README.md \
+            core/ai-seo-operating-system.md \
+            core/technical-seo.md \
+            core/content-strategy.md \
+            core/local-seo.md \
+            core/programmatic-seo.md \
+            core/video-derived-lessons.md \
+            prompts/universal-ai-seo-prompts.md \
+            adapters/claude-project-instructions.md \
+            adapters/chatgpt-instructions.md \
+            adapters/gemini-gem-instructions.md \
+            adapters/perplexity-space-instructions.md \
+            adapters/coding-agent-rules.md \
+            sources/video-index.md
+          do
+            test -f "$f" || { echo "::error::missing $f"; exit 1; }
+          done
+          echo "All required files present"
+
+      - name: Verify each core playbook declares 'When to use'
+        run: |
+          set -e
+          for f in core/ai-seo-operating-system.md core/technical-seo.md core/content-strategy.md core/local-seo.md core/programmatic-seo.md; do
+            if ! head -10 "$f" | grep -q 'When to use this playbook'; then
+              echo "::error::$f missing 'When to use this playbook' routing header"
+              exit 1
+            fi
+          done
+          echo "All core playbooks declare 'When to use'"
+
+      - name: Verify adapters reference SKILL.md or core/
+        run: |
+          set -e
+          for f in adapters/*.md; do
+            if ! grep -qE 'SKILL\.md|core/' "$f"; then
+              echo "::error::$f has no reference to SKILL.md or core/"
+              exit 1
+            fi
+          done
+          echo "All adapters route to the playbooks"
+
+      - name: Reject committed secrets (belt and suspenders)
+        run: |
+          set -e
+          # Scan only content files; skip .git and the workflows directory
+          # (the workflow itself contains the patterns it scans for).
+          if grep -RIl \
+                --exclude-dir=.git \
+                --exclude-dir=.github \
+                -E '(API_KEY\s*=\s*[A-Za-z0-9]{16,}|sk-[A-Za-z0-9]{20,}|xoxb-[A-Za-z0-9-]{20,}|ghp_[A-Za-z0-9]{30,})' .; then
+            echo "::error::potential secret patterns committed"
+            exit 1
+          fi
+          echo "No secret patterns detected"
