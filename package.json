@@ -1,0 +1,54 @@
+{
+  "name": "@piramilan/seo-expert",
+  "version": "0.2.0",
+  "description": "Portable SEO + AI-SEO/GEO skill for Claude, ChatGPT, Gemini, Perplexity, and coding agents (Cursor, Cline, Windsurf, Aider).",
+  "keywords": [
+    "seo",
+    "ai-seo",
+    "geo",
+    "aeo",
+    "llmo",
+    "claude",
+    "chatgpt",
+    "gemini",
+    "perplexity",
+    "cursor",
+    "cline",
+    "windsurf",
+    "aider",
+    "skill",
+    "prompts",
+    "playbook",
+    "ai-search"
+  ],
+  "homepage": "https://github.com/Piramilan/seo-expert",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Piramilan/seo-expert.git"
+  },
+  "bugs": "https://github.com/Piramilan/seo-expert/issues",
+  "license": "MIT",
+  "author": "Milan <https://github.com/Piramilan>",
+  "type": "module",
+  "bin": {
+    "seo-expert": "bin/seo-expert.js"
+  },
+  "files": [
+    "bin/",
+    "SKILL.md",
+    "INSTALL.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "core/",
+    "prompts/",
+    "adapters/",
+    "sources/"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

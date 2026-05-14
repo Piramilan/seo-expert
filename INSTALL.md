@@ -2,16 +2,64 @@
 
 Five-minute setup per AI tool. Pick the tool(s) you use; the skill operates the same way in each.
 
+This file is the deep walkthrough. The [README](README.md) has the same content in a more compact form — pick whichever you prefer.
+
+---
+
+## Quickest path — one-line `npx` (Node ≥ 18)
+
+The package ships every adapter and playbook. The CLI either drops the right files into your project / home, or copies the adapter to your clipboard for web-based AI tools.
+
+```bash
+# Interactive menu
+npx @piramilan/seo-expert
+
+# Coding agents (drops the rules file into the current directory)
+npx @piramilan/seo-expert install cursor      # → .cursorrules
+npx @piramilan/seo-expert install cline       # → .clinerules
+npx @piramilan/seo-expert install windsurf    # → .windsurfrules
+npx @piramilan/seo-expert install aider       # → CONVENTIONS.md
+npx @piramilan/seo-expert install continue    # → .continue/seo-expert.md
+
+# Anthropic CLI (installs to ~/.claude/skills/seo-expert/)
+npx @piramilan/seo-expert install claude-code
+
+# Web-based AI tools — copies the adapter to clipboard + prints next steps
+npx @piramilan/seo-expert copy chatgpt
+npx @piramilan/seo-expert copy claude-project
+npx @piramilan/seo-expert copy gemini
+npx @piramilan/seo-expert copy perplexity
+
+# Discovery
+npx @piramilan/seo-expert list
+npx @piramilan/seo-expert info
+npx @piramilan/seo-expert help
+```
+
+**Pin a version for reproducible setups:**
+
+```bash
+npx @piramilan/seo-expert@0.2.0 install cursor
+```
+
+**Safety notes:**
+
+- Existing target files (`.cursorrules`, `CONVENTIONS.md`, etc.) are backed up to `<file>.bak.<timestamp>` before being overwritten.
+- Clipboard copy works on macOS (`pbcopy`), Linux (`wl-copy` / `xclip` / `xsel`), Windows (`clip`). If none are available, the adapter is written to `seo-expert-adapter.md` in the current directory.
+- Zero runtime dependencies — the CLI uses only Node built-ins.
+
+If you can't run Node, skip to the manual path for your tool below.
+
 ---
 
 ## Claude Code (developers, agencies, anyone using Claude in the terminal)
 
 ```bash
-# Clone alongside your other skills
-git clone https://github.com/Piramilan/seo-expert.git ~/skills/seo-expert
+# Clone into the Claude Code skills directory
+git clone https://github.com/Piramilan/seo-expert.git ~/.claude/skills/seo-expert
 ```
 
-Then in Claude Code, reference the repo or open it as a project. The skill auto-invokes when you ask SEO questions because of the `description:` in `SKILL.md` frontmatter.
+Then restart Claude Code (or open a new conversation). The skill auto-invokes when you ask SEO questions because of the `description:` in `SKILL.md` frontmatter.
 
 **Test it:**
 ```

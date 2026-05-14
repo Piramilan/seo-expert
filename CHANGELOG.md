@@ -4,6 +4,31 @@ All notable changes to the SEO Expert skill are documented here.
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.2.0] — 2026-05-13
+
+One-line install via `npx`. Same skill content as 0.1.0; new way to deliver it.
+
+### Added
+- `package.json` — npm package metadata. Published as `@piramilan/seo-expert` to the public registry.
+- `bin/seo-expert.js` — zero-dependency Node CLI. Drives:
+  - `npx @piramilan/seo-expert install <tool>` for file-based installs (Cursor, Cline, Windsurf, Aider, continue.dev, Claude Code)
+  - `npx @piramilan/seo-expert copy <tool>` for clipboard-based installs (ChatGPT, Claude Project, Gemini, Perplexity)
+  - `npx @piramilan/seo-expert` for the interactive picker
+  - `list`, `info`, `help` subcommands for discovery
+- Existing-file backup on install — any pre-existing `.cursorrules` / `CONVENTIONS.md` / `.clinerules` is renamed to `<file>.bak.<timestamp>` before being overwritten.
+- Cross-platform clipboard support (macOS `pbcopy`, Linux `wl-copy`/`xclip`/`xsel`, Windows `clip`) with a `seo-expert-adapter.md` file fallback when none is available.
+
+### Changed
+- `README.md` rewritten as a one-stop install guide with table of contents, npx primary path, and inline manual paths per AI tool.
+- `INSTALL.md` adds a "Quickest path — one-line npx" section at the top and corrects the manual Claude Code clone path to `~/.claude/skills/seo-expert`.
+- Skill content under `core/`, `adapters/`, `prompts/`, `sources/`, and `SKILL.md` is unchanged from v0.1.0 — `npx @piramilan/seo-expert@0.1.0` and `@0.2.0` ship identical guidance.
+
+### Requirements
+- Node ≥ 18 for the `npx` flow (zero deps, uses only `node:` built-ins).
+- Manual install paths require no runtime — just file copy.
+
+[0.2.0]: https://github.com/Piramilan/seo-expert/releases/tag/v0.2.0
+
 ## [0.1.0] — 2026-05-13
 
 Initial public release.
