@@ -4,6 +4,39 @@ All notable changes to the SEO Expert skill are documented here.
 
 This project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.3.0] — 2026-05-14
+
+Cleanup release. The skill's value is its playbooks and the output contract — not how those playbooks were authored. This release removes references to the training corpus from every client-facing surface so the package presents as a polished, hand-written consultant skill.
+
+### Removed
+- `sources/video-index.md` — public source-video metadata index removed from the published package.
+- `core/video-derived-lessons.md` — auto-generated topic bullets removed from the published package.
+- The `sources/` directory is no longer part of the npm tarball or repo.
+
+### Changed
+- **Output Contract item 6** rephrased: *"Source references when drawing from the video-derived corpus"* → *"Source references when citing claims, statistics, definitions, or third-party content."* The contract stays six parts; the trigger is now generic.
+- **`SKILL.md`** description trimmed to *"built on a set of hand-written, regularly maintained playbooks that compress senior SEO consulting practice into a portable, auditable skill."*
+- **Guardrails** consolidated: a single "No third-party content reproduction" rule replaces the prior "no raw transcripts" wording across `SKILL.md` and every adapter.
+- **README + INSTALL upload checklists** trimmed from 9 files to 7 (removed the two video files from Claude Project / ChatGPT / Perplexity Space upload instructions).
+- **`bin/seo-expert.js`** — `install claude-code` no longer copies `sources/` into `~/.claude/skills/seo-expert/`.
+- **`package.json`** — `files` whitelist no longer includes `sources/`.
+- **`.github/workflows/verify.yml`** — required-file check no longer requires the two removed files.
+- **`.github/PULL_REQUEST_TEMPLATE.md`** — Output Contract checklist and anti-patterns reworded to remove transcript-specific language.
+
+### Unchanged
+- The five `core/*.md` playbooks (`ai-seo-operating-system`, `technical-seo`, `content-strategy`, `local-seo`, `programmatic-seo`) — same guidance, same depth.
+- The nine prompt templates in `prompts/universal-ai-seo-prompts.md`.
+- The five adapters' install flows, principles, and output contracts.
+- The CLI commands and behavior (`install`, `copy`, `list`, `info`, `help`).
+- License (MIT), Node ≥ 18 requirement, scoped name `@piramilan/seo-expert`.
+
+### Migration
+- **`npx` users:** the next `npx @piramilan/seo-expert install <tool>` automatically pulls 0.3.0.
+- **Manual installers:** drop the two files from your knowledge bases (Claude Project, ChatGPT GPT, Perplexity Space). Re-paste the updated adapter block where the Output Contract wording matters to you.
+- **Pinned users:** `npx @piramilan/seo-expert@0.2.0 install <tool>` still works.
+
+[0.3.0]: https://github.com/Piramilan/seo-expert/releases/tag/v0.3.0
+
 ## [0.2.0] — 2026-05-13
 
 One-line install via `npx`. Same skill content as 0.1.0; new way to deliver it.

@@ -3,11 +3,11 @@
 > One portable SEO + AI-SEO/GEO skill that works the same way in **Claude**, **ChatGPT**, **Gemini**, **Perplexity**, and coding agents (**Cursor**, **Cline**, **Windsurf**, **Aider**).
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.3.0-green.svg)](CHANGELOG.md)
 [![npm](https://img.shields.io/badge/npm-%40piramilan%2Fseo--expert-red.svg)](https://www.npmjs.com/package/@piramilan/seo-expert)
 [![Skill](https://img.shields.io/badge/skill-seo--expert-purple.svg)](SKILL.md)
 
-A senior SEO + AI-search consultant in skill form. Diagnose before prescribing, return prioritized recommendations against a six-part output contract, and refuse fake-signal tactics. Built on hand-written playbooks plus a corpus of video-derived SEO lessons.
+A senior SEO + AI-search consultant in skill form. Diagnose before prescribing, return prioritized recommendations against a six-part output contract, and refuse fake-signal tactics. Built on a set of hand-written, regularly maintained playbooks.
 
 ---
 
@@ -57,7 +57,7 @@ Every deliverable from the skill contains, in order:
 3. **Concrete examples** — rewritten section, schema snippet, internal-link plan, or page template
 4. **Verification steps** — tool, expected timeframe, signal to watch
 5. **Risks, assumptions, dependencies**
-6. **Source references** when drawing from the video corpus
+6. **Source references** when citing claims, stats, or third-party content
 
 If a critical input is missing, the skill asks one specific question rather than guessing.
 
@@ -105,7 +105,7 @@ npx @piramilan/seo-expert help      # full CLI usage
 
 - If a target file (`.cursorrules`, `CONVENTIONS.md`, etc.) already exists, the CLI backs it up to `<file>.bak.<timestamp>` before writing.
 - Clipboard copy works on macOS (`pbcopy`), Linux (`wl-copy` / `xclip` / `xsel`), and Windows (`clip`). If none are available, the CLI writes `seo-expert-adapter.md` to the current directory so you can copy it manually.
-- Pin a specific version for reproducible setups: `npx @piramilan/seo-expert@0.2.0 install cursor`.
+- Pin a specific version for reproducible setups: `npx @piramilan/seo-expert@0.3.0 install cursor`.
 
 ---
 
@@ -138,9 +138,7 @@ Restart Claude Code (or open a new conversation). Ask any SEO question — the s
    - [core/content-strategy.md](core/content-strategy.md)
    - [core/local-seo.md](core/local-seo.md)
    - [core/programmatic-seo.md](core/programmatic-seo.md)
-   - [core/video-derived-lessons.md](core/video-derived-lessons.md)
    - [prompts/universal-ai-seo-prompts.md](prompts/universal-ai-seo-prompts.md)
-   - [sources/video-index.md](sources/video-index.md)
 4. Save.
 
 **Test it:** `Audit https://example.com for SEO`
@@ -157,7 +155,7 @@ Restart Claude Code (or open a new conversation). Ask any SEO question — the s
    - `Rewrite this page section for AI extractability: `
    - `Build a content brief for the query: `
    - `Plan programmatic pages for the pattern: `
-5. **Knowledge** — upload the same 9 files listed in the Claude Project section above.
+5. **Knowledge** — upload the same 7 files listed in the Claude Project section above.
 6. **Capabilities** — enable Web Browsing (so the GPT can fetch URLs you give it). Code Interpreter is optional.
 7. **Save** → publish to *Only me*, *Anyone with the link*, or *Everyone* (GPT Store).
 
@@ -182,7 +180,7 @@ Restart Claude Code (or open a new conversation). Ask any SEO question — the s
 
 1. **[perplexity.ai](https://perplexity.ai) → Spaces → Create a Space**.
 2. Open [adapters/perplexity-space-instructions.md](adapters/perplexity-space-instructions.md). Copy the block under **`## Instructions (paste this)`** → paste into the Space's instructions.
-3. Add the 9 files (same list as the Claude Project section) to the Space library.
+3. Add the 7 files (same list as the Claude Project section) to the Space library.
 4. Save.
 
 **Why Perplexity is special:** it does live web search and cites every claim. Use it for *current-state* audits where you want fresh evidence.
@@ -223,7 +221,7 @@ Run this prompt in any installed tool:
 
 > Diagnose, then return the six-part output contract for `https://example.com`. Skip detailed recommendations — I just want to confirm the skill is wired up.
 
-The response must contain six labeled sections: Diagnosis · Prioritized recommendations · Concrete examples · Verification steps · Risks/assumptions/dependencies · Source references. If any section is missing, the adapter wasn't fully pasted or the knowledge files weren't uploaded.
+The response must contain six labeled sections: Diagnosis · Prioritized recommendations · Concrete examples · Verification steps · Risks/assumptions/dependencies · Source references (when applicable). If any section is missing, the adapter wasn't fully pasted or the knowledge files weren't uploaded.
 
 ---
 
@@ -240,7 +238,7 @@ When a new release cuts (see [CHANGELOG.md](CHANGELOG.md)):
 Pin to a specific version for reproducible installs:
 
 ```bash
-npx @piramilan/seo-expert@0.2.0 install cursor
+npx @piramilan/seo-expert@0.3.0 install cursor
 ```
 
 ---
@@ -262,18 +260,15 @@ seo-expert/
 │   ├── technical-seo.md              ← crawl, index, schema, performance, Search Console
 │   ├── content-strategy.md           ← briefs, clusters, refresh, internal linking
 │   ├── local-seo.md                  ← GBP, map pack, reviews, location pages
-│   ├── programmatic-seo.md           ← templated page sets, validation, kill switches
-│   └── video-derived-lessons.md      ← generated lessons by topic (with source links)
+│   └── programmatic-seo.md           ← templated page sets, validation, kill switches
 ├── prompts/
 │   └── universal-ai-seo-prompts.md   ← 9 ready-to-paste prompt templates
-├── adapters/
-│   ├── claude-project-instructions.md
-│   ├── chatgpt-instructions.md
-│   ├── gemini-gem-instructions.md
-│   ├── perplexity-space-instructions.md
-│   └── coding-agent-rules.md
-└── sources/
-    └── video-index.md                ← public source-video metadata index
+└── adapters/
+    ├── claude-project-instructions.md
+    ├── chatgpt-instructions.md
+    ├── gemini-gem-instructions.md
+    ├── perplexity-space-instructions.md
+    └── coding-agent-rules.md
 ```
 
 ---
@@ -307,13 +302,13 @@ No bought reviews · no faked map-pack engagement · no link farms · no hidden 
 > 3. Concrete HTML rewrites + JSON-LD blocks ready to ship
 > 4. Verification steps (Rich Results Test, Search Console, GA4 filters)
 > 5. Risks (schema-mismatch, thin pages, competitor positioning)
-> 6. Source links to the video corpus
+> 6. Source links for any cited stats or third-party content
 
 ---
 
 ## Versioning, contributing, license
 
-**Semver.** See [CHANGELOG.md](CHANGELOG.md). Pin to a tag (`v0.2.0`) or to an npm version (`@piramilan/seo-expert@0.2.0`) if you want a stable surface.
+**Semver.** See [CHANGELOG.md](CHANGELOG.md). Pin to a tag (`v0.3.0`) or to an npm version (`@piramilan/seo-expert@0.3.0`) if you want a stable surface.
 
 **Contributing.** Issues and PRs welcome. Useful contributions: new playbooks (`core/*.md`), new adapters (a new AI tool), new prompt templates (`prompts/*.md`), and edits that tighten existing guidance. Keep the six-part Output Contract intact — that's the skill's identity. See `.github/PULL_REQUEST_TEMPLATE.md` for the checklist.
 

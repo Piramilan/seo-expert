@@ -72,7 +72,7 @@ const TOOLS = {
     label: 'Claude Code',
     kind: 'skill-dir',
     target: path.join(os.homedir(), '.claude', 'skills', 'seo-expert'),
-    sources: ['SKILL.md', 'core', 'prompts', 'adapters', 'sources'],
+    sources: ['SKILL.md', 'core', 'prompts', 'adapters'],
     note: 'Anthropic CLI — installs to ~/.claude/skills/seo-expert/',
   },
   'claude-project': {
@@ -82,7 +82,7 @@ const TOOLS = {
     instructions: [
       '1. Go to claude.ai → New Project',
       '2. Paste the copied text into Custom instructions',
-      '3. Upload to Project knowledge: SKILL.md, core/*.md, prompts/*.md, sources/video-index.md',
+      '3. Upload to Project knowledge: SKILL.md, all core/*.md files, and prompts/universal-ai-seo-prompts.md',
     ],
   },
   chatgpt: {

@@ -80,9 +80,7 @@ audit https://example.com for AI visibility
    - `core/content-strategy.md`
    - `core/local-seo.md`
    - `core/programmatic-seo.md`
-   - `core/video-derived-lessons.md`
    - `prompts/universal-ai-seo-prompts.md`
-   - `sources/video-index.md`
 5. Save.
 
 **Test it:** `Audit https://example.com for SEO`
@@ -100,7 +98,7 @@ audit https://example.com for AI visibility
    - `Rewrite this page section for AI extractability: `
    - `Build a content brief for the query: `
    - `Plan programmatic pages for the pattern: `
-6. **Knowledge** — upload the same 9 files listed in the Claude Project section above
+6. **Knowledge** — upload the same 7 files listed in the Claude Project section above
 7. **Capabilities** — enable Web Browsing (lets the GPT fetch URLs you give it). Enable Code Interpreter only if you want it to validate JSON-LD locally.
 8. **Save** → publish to *Only me*, *Anyone with the link*, or *Everyone* (the GPT Store).
 
@@ -109,7 +107,7 @@ audit https://example.com for AI visibility
 ### ChatGPT Project (alternative, simpler, no Custom GPT)
 1. **chatgpt.com → Projects → New Project**
 2. Paste the same instructions block into the Project's instructions
-3. Drop the same 9 files into Project files
+3. Drop the same 7 files into Project files
 4. Same conversation starters work.
 
 ---
@@ -133,9 +131,8 @@ audit https://example.com for AI visibility
 2. Open [adapters/perplexity-space-instructions.md](adapters/perplexity-space-instructions.md), copy the block under `## Instructions (paste this)` → paste into the Space's instructions
 3. Add to the Space library (Perplexity supports `.md`):
    - `SKILL.md`
-   - All 6 `core/*.md` files
+   - All 5 `core/*.md` files
    - `prompts/universal-ai-seo-prompts.md`
-   - `sources/video-index.md`
 4. Save.
 
 **Why Perplexity is special:** it does live web search and cites every claim. Use it for *current-state* audits where you want fresh evidence (rank tracking, AI-answer surface, competitor backlinks).

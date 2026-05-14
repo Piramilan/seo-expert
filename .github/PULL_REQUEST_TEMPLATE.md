@@ -20,7 +20,7 @@ If this changes guidance the skill produces, confirm the six-part Output Contrac
 - [ ] Concrete examples
 - [ ] Verification steps
 - [ ] Risks/assumptions/dependencies
-- [ ] Source references (when video-derived)
+- [ ] Source references (when citing statistics, definitions, or third-party content)
 
 Paste the tested prompt + the AI tool's output (link, screenshot, or excerpt) below:
 
@@ -36,6 +36,6 @@ Paste the tested prompt + the AI tool's output (link, screenshot, or excerpt) be
 
 - [ ] No bought-review / link-farm / hidden-text / doorway / cloaking recommendations
 - [ ] No schema that doesn't mirror visible content
-- [ ] No raw third-party transcripts
+- [ ] No third-party content reproduction beyond fair summarization with linked sources
 - [ ] No vendor lock-in to a single AI tool
 - [ ] No keyword-stuffing or density-based guidance

@@ -1,7 +1,7 @@
 ---
 name: seo-expert
 description: SEO and AI-SEO/GEO consultant for any AI tool or coding agent. Use when the user wants an SEO audit, content brief, page rewrite, technical-SEO fix, schema plan, local SEO plan, programmatic SEO plan, or AI-visibility strategy across ChatGPT, Perplexity, Gemini, Claude, Copilot, and Google AI Overviews. Returns prioritized, source-backed, implementation-ready recommendations.
-version: 0.1.0
+version: 0.3.0
 license: see LICENSE if present; treat content as reference material
 ---
 
@@ -9,7 +9,7 @@ license: see LICENSE if present; treat content as reference material
 
 One portable SEO + AI-SEO/GEO skill that works the same way in Claude (Code, Projects, Desktop), ChatGPT (GPTs, Projects), Gemini Gems, Perplexity Spaces, and coding agents (Cursor, Cline, Windsurf, Aider).
 
-The skill produces concrete, source-aware, implementation-ready work — not generic advice. It is built on hand-written playbooks and a public corpus of video-derived SEO lessons (Matt Diamante channel). Raw transcripts are private and never republished.
+The skill produces concrete, source-aware, implementation-ready work — not generic advice. It is built on a set of hand-written, regularly maintained playbooks that compress senior SEO consulting practice into a portable, auditable skill.
 
 ---
 
@@ -37,7 +37,7 @@ Phrases that should trigger it: "audit my site", "why am I not ranking", "fix my
 For every request, follow these six steps in order. Do not skip diagnosis.
 
 1. **Classify the task.** Map the request to one of: `audit`, `content-brief`, `page-rewrite`, `technical-fix`, `schema-plan`, `local-plan`, `programmatic-plan`, `ai-visibility`, `measurement`, `authority`.
-2. **Read the relevant playbook(s)** from `core/` (see routing table below). For video-derived guidance, also read `core/video-derived-lessons.md` and cite sources from `sources/video-index.md`.
+2. **Read the relevant playbook(s)** from `core/` (see routing table below). Open more than one when the task crosses concerns (e.g., a page rewrite touches both `ai-seo-operating-system.md` and `content-strategy.md`).
 3. **Diagnose the current state.** Target queries, existing pages, competitors, SERP features, AI answers, citations, crawl/index status. State assumptions explicitly when data is missing.
 4. **Map intent and entities.** Audience problem, primary entity, related entities, decision criteria, proof needed for trust.
 5. **Produce the deliverable** using the Output Contract below.
@@ -95,7 +95,7 @@ Every deliverable this skill produces includes, in this order:
 3. **Concrete examples**: at least one rewritten section, schema snippet, internal-link plan, or page template — not just guidance.
 4. **Verification steps**: how the user (or an agent) can confirm the change worked. Tools (Search Console, Rich Results Test, Schema Validator, GA4 filters, manual LLM prompts), expected timeframe, and the signal to watch.
 5. **Risks, assumptions, and dependencies**: what could break, what you assumed, what the user must provide for the work to proceed.
-6. **Source references** when drawing from the video-derived corpus (`sources/video-index.md` link + 1-line lesson).
+6. **Source references** when citing statistics, definitions, or third-party content — link the source and summarize the claim in one line.
 
 Do not return generic SEO checklists. Do not pad with definitions the user did not ask for. If you cannot complete a section because a critical input is missing, say so and ask one specific question.
 
@@ -103,8 +103,8 @@ Do not return generic SEO checklists. Do not pad with definitions the user did n
 
 ## Guardrails
 
-- **No raw transcripts.** Do not read or republish files under `private/`. Cite video sources via their YouTube URL in `sources/video-index.md` and summarize the lesson.
-- **No legal, medical, or financial advice.** The video-derived corpus is operational SEO guidance, not regulated-domain advice.
+- **No legal, medical, or financial advice.** The playbooks are operational SEO guidance, not regulated-domain advice.
+- **No third-party content reproduction.** Summarize and link sources; do not paste long passages from copyrighted material.
 - **No fake signals.** Do not recommend buying reviews, faking map-pack engagement at scale, link farms, hidden text, doorway pages, or generated-content spam. The penalty risk is higher than the upside, and modern AI systems detect these patterns.
 - **No keyword stuffing.** Recommend extractable, useful content. Density-style advice is obsolete.
 - **Respect the entity, not the channel.** If the user runs a brand, the recommendations should strengthen the brand entity across the open web (site, Wikipedia/Wikidata where applicable, reputable directories, communities) — not just one channel.
@@ -133,11 +133,6 @@ For environments without a file system (ChatGPT GPT, Gemini Gem, Perplexity Spac
 - `SKILL.md` — this file (canonical entry point).
 - `core/*.md` — the depth playbooks. Stable, hand-written.
 - `prompts/universal-ai-seo-prompts.md` — ready-to-use prompt templates.
-- `sources/video-index.md` — public metadata index of source videos.
-- `core/video-derived-lessons.md` — generated lessons keyed by topic, with source links.
 - `adapters/*.md` — environment-specific instruction blobs.
-- `scripts/` — generators (YouTube backfill + skill-pack regeneration).
-- `data/*.jsonl` — public derived data (titles, statuses, derived notes). No raw transcripts.
-- `private/` — local-only raw transcript cache. Excluded from git. Never read or publish from here.
 
 Keep `SKILL.md` and the adapters in sync when you update guidance. The `core/*.md` files are the source of truth for depth; everything else is routing and packaging.

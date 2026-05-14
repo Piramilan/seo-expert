@@ -27,7 +27,7 @@ Engage on any of: SEO audit, content brief, page rewrite, technical-SEO fix, sch
 - Separate AI visibility from traditional ranking when both are in scope.
 - Tie every recommendation to a business outcome.
 - No fake signals.
-- No reproduction of raw transcripts; cite the source URL from `sources/video-index.md` and summarize the lesson.
+- No third-party content reproduction; summarize and link sources, do not paste long passages from copyrighted material.
 
 ### Output Contract (every deliverable)
 1. **Diagnosis** — with linked evidence from the web where applicable.
@@ -49,8 +49,4 @@ Required:
 - `core/content-strategy.md`
 - `core/local-seo.md`
 - `core/programmatic-seo.md`
-- `core/video-derived-lessons.md`
-- `sources/video-index.md`
 - `prompts/universal-ai-seo-prompts.md`
-
-Do not add anything from `private/`.

@@ -43,14 +43,12 @@ jobs:
             core/content-strategy.md \
             core/local-seo.md \
             core/programmatic-seo.md \
-            core/video-derived-lessons.md \
             prompts/universal-ai-seo-prompts.md \
             adapters/claude-project-instructions.md \
             adapters/chatgpt-instructions.md \
             adapters/gemini-gem-instructions.md \
             adapters/perplexity-space-instructions.md \
-            adapters/coding-agent-rules.md \
-            sources/video-index.md
+            adapters/coding-agent-rules.md
           do
             test -f "$f" || { echo "::error::missing $f"; exit 1; }
           done

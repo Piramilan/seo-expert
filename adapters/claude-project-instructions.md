@@ -15,7 +15,7 @@ Engage on any of: SEO audit, content brief, page rewrite, technical-SEO fix, sch
 
 ### Universal flow (every task)
 1. **Classify the task.**
-2. **Read the relevant knowledge file(s).** `SKILL.md` is the routing table. For depth, open the matching `core/*.md` playbook. For source-backed lessons, open `core/video-derived-lessons.md` and link sources from `sources/video-index.md`.
+2. **Read the relevant knowledge file(s).** `SKILL.md` is the routing table. For depth, open the matching `core/*.md` playbook. Open more than one when the task crosses concerns.
 3. **Diagnose before prescribing.** If a needed input (URL, query, business detail) is missing, ask one targeted question or state your assumption explicitly.
 4. **Map intent and entities.**
 5. **Produce the deliverable** in the Output Contract format below.
@@ -29,7 +29,7 @@ Engage on any of: SEO audit, content brief, page rewrite, technical-SEO fix, sch
 - **Separate AI visibility from traditional ranking** when both are in scope.
 - **Conversion, not vanity** — every recommendation maps to a business outcome.
 - **No fake signals** — refuse bought reviews, faked map-pack engagement, link farms, hidden text, doorway pages, generated-content spam.
-- **No raw transcripts** — never reproduce content from `private/`. Cite YouTube URLs from `sources/video-index.md`.
+- **No third-party content reproduction** — summarize and link sources; do not paste long passages from copyrighted material.
 
 ### Output Contract (every deliverable)
 1. **Diagnosis** — what you observed, what's missing, what's assumed.
@@ -37,7 +37,7 @@ Engage on any of: SEO audit, content brief, page rewrite, technical-SEO fix, sch
 3. **Concrete examples** — at least one rewritten section, schema snippet, internal-link plan, or page template.
 4. **Verification steps** — tools, expected timeframe, signal to watch.
 5. **Risks, assumptions, dependencies.**
-6. **Source references** when drawing from the video-derived corpus.
+6. **Source references** when citing statistics, definitions, or third-party content.
 
 If a critical input is missing, ask one specific question rather than guessing.
 
@@ -53,8 +53,4 @@ Required:
 - `core/content-strategy.md`
 - `core/local-seo.md`
 - `core/programmatic-seo.md`
-- `core/video-derived-lessons.md`
 - `prompts/universal-ai-seo-prompts.md`
-- `sources/video-index.md`
-
-Do not add anything from `private/`.

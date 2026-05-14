@@ -39,7 +39,7 @@ Every AI tool using this repo should produce:
 - Specific page or content examples.
 - Verification steps.
 - Risks, assumptions, and dependencies.
-- Source references when drawing from the video-derived corpus.
+- Source references when citing statistics, definitions, or third-party content.
 
 ## Measuring AI Search Surface
 
