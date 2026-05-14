@@ -12,34 +12,34 @@ The package ships every adapter and playbook. The CLI either drops the right fil
 
 ```bash
 # Interactive menu
-npx @piramilan/seo-expert
+npx @milandev98/seo-expert
 
 # Coding agents (drops the rules file into the current directory)
-npx @piramilan/seo-expert install cursor      # → .cursorrules
-npx @piramilan/seo-expert install cline       # → .clinerules
-npx @piramilan/seo-expert install windsurf    # → .windsurfrules
-npx @piramilan/seo-expert install aider       # → CONVENTIONS.md
-npx @piramilan/seo-expert install continue    # → .continue/seo-expert.md
+npx @milandev98/seo-expert install cursor      # → .cursorrules
+npx @milandev98/seo-expert install cline       # → .clinerules
+npx @milandev98/seo-expert install windsurf    # → .windsurfrules
+npx @milandev98/seo-expert install aider       # → CONVENTIONS.md
+npx @milandev98/seo-expert install continue    # → .continue/seo-expert.md
 
 # Anthropic CLI (installs to ~/.claude/skills/seo-expert/)
-npx @piramilan/seo-expert install claude-code
+npx @milandev98/seo-expert install claude-code
 
 # Web-based AI tools — copies the adapter to clipboard + prints next steps
-npx @piramilan/seo-expert copy chatgpt
-npx @piramilan/seo-expert copy claude-project
-npx @piramilan/seo-expert copy gemini
-npx @piramilan/seo-expert copy perplexity
+npx @milandev98/seo-expert copy chatgpt
+npx @milandev98/seo-expert copy claude-project
+npx @milandev98/seo-expert copy gemini
+npx @milandev98/seo-expert copy perplexity
 
 # Discovery
-npx @piramilan/seo-expert list
-npx @piramilan/seo-expert info
-npx @piramilan/seo-expert help
+npx @milandev98/seo-expert list
+npx @milandev98/seo-expert info
+npx @milandev98/seo-expert help
 ```
 
 **Pin a version for reproducible setups:**
 
 ```bash
-npx @piramilan/seo-expert@0.2.0 install cursor
+npx @milandev98/seo-expert@0.2.0 install cursor
 ```
 
 **Safety notes:**

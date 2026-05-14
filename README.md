@@ -4,7 +4,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.2.0-green.svg)](CHANGELOG.md)
-[![npm](https://img.shields.io/badge/npm-%40piramilan%2Fseo--expert-red.svg)](https://www.npmjs.com/package/@piramilan/seo-expert)
+[![npm](https://img.shields.io/badge/npm-%40milandev98%2Fseo--expert-red.svg)](https://www.npmjs.com/package/@milandev98/seo-expert)
 [![Skill](https://img.shields.io/badge/skill-seo--expert-purple.svg)](SKILL.md)
 
 A senior SEO + AI-search consultant in skill form. Diagnose before prescribing, return prioritized recommendations against a six-part output contract, and refuse fake-signal tactics. Built on hand-written playbooks plus a corpus of video-derived SEO lessons.
@@ -70,42 +70,42 @@ Requires Node ≥ 18. The package ships every adapter and playbook; the CLI plac
 **Interactive menu** — pick a tool from a list:
 
 ```bash
-npx @piramilan/seo-expert
+npx @milandev98/seo-expert
 ```
 
 **Direct install per tool** — one command, done:
 
 ```bash
 # Coding agents (drops the rules file into your current project directory)
-npx @piramilan/seo-expert install cursor      # → .cursorrules
-npx @piramilan/seo-expert install cline       # → .clinerules
-npx @piramilan/seo-expert install windsurf    # → .windsurfrules
-npx @piramilan/seo-expert install aider       # → CONVENTIONS.md
-npx @piramilan/seo-expert install continue    # → .continue/seo-expert.md
+npx @milandev98/seo-expert install cursor      # → .cursorrules
+npx @milandev98/seo-expert install cline       # → .clinerules
+npx @milandev98/seo-expert install windsurf    # → .windsurfrules
+npx @milandev98/seo-expert install aider       # → CONVENTIONS.md
+npx @milandev98/seo-expert install continue    # → .continue/seo-expert.md
 
 # Anthropic CLI (installs to ~/.claude/skills/seo-expert/)
-npx @piramilan/seo-expert install claude-code
+npx @milandev98/seo-expert install claude-code
 
 # Web-based AI tools — copies the adapter to your clipboard + prints next steps
-npx @piramilan/seo-expert copy chatgpt
-npx @piramilan/seo-expert copy claude-project
-npx @piramilan/seo-expert copy gemini
-npx @piramilan/seo-expert copy perplexity
+npx @milandev98/seo-expert copy chatgpt
+npx @milandev98/seo-expert copy claude-project
+npx @milandev98/seo-expert copy gemini
+npx @milandev98/seo-expert copy perplexity
 ```
 
 **Discovery commands:**
 
 ```bash
-npx @piramilan/seo-expert list      # list every supported tool
-npx @piramilan/seo-expert info      # version + repo info
-npx @piramilan/seo-expert help      # full CLI usage
+npx @milandev98/seo-expert list      # list every supported tool
+npx @milandev98/seo-expert info      # version + repo info
+npx @milandev98/seo-expert help      # full CLI usage
 ```
 
 **Safety notes:**
 
 - If a target file (`.cursorrules`, `CONVENTIONS.md`, etc.) already exists, the CLI backs it up to `<file>.bak.<timestamp>` before writing.
 - Clipboard copy works on macOS (`pbcopy`), Linux (`wl-copy` / `xclip` / `xsel`), and Windows (`clip`). If none are available, the CLI writes `seo-expert-adapter.md` to the current directory so you can copy it manually.
-- Pin a specific version for reproducible setups: `npx @piramilan/seo-expert@0.2.0 install cursor`.
+- Pin a specific version for reproducible setups: `npx @milandev98/seo-expert@0.2.0 install cursor`.
 
 ---
 
@@ -231,7 +231,7 @@ The response must contain six labeled sections: Diagnosis · Prioritized recomme
 
 When a new release cuts (see [CHANGELOG.md](CHANGELOG.md)):
 
-- **`npx` users:** the next `npx @piramilan/seo-expert install <tool>` automatically pulls the latest version. Pin with `@x.y.z` if you don't want updates.
+- **`npx` users:** the next `npx @milandev98/seo-expert install <tool>` automatically pulls the latest version. Pin with `@x.y.z` if you don't want updates.
 - **Claude Code (manual clone):** `cd ~/.claude/skills/seo-expert && git pull`
 - **Claude Project / ChatGPT GPT / Perplexity Space:** re-upload only the files that changed (see the version's CHANGELOG diff).
 - **Gemini Gem:** re-paste the changed playbook content.
@@ -240,7 +240,7 @@ When a new release cuts (see [CHANGELOG.md](CHANGELOG.md)):
 Pin to a specific version for reproducible installs:
 
 ```bash
-npx @piramilan/seo-expert@0.2.0 install cursor
+npx @milandev98/seo-expert@0.2.0 install cursor
 ```
 
 ---
@@ -313,7 +313,7 @@ No bought reviews · no faked map-pack engagement · no link farms · no hidden 
 
 ## Versioning, contributing, license
 
-**Semver.** See [CHANGELOG.md](CHANGELOG.md). Pin to a tag (`v0.2.0`) or to an npm version (`@piramilan/seo-expert@0.2.0`) if you want a stable surface.
+**Semver.** See [CHANGELOG.md](CHANGELOG.md). Pin to a tag (`v0.2.0`) or to an npm version (`@milandev98/seo-expert@0.2.0`) if you want a stable surface.
 
 **Contributing.** Issues and PRs welcome. Useful contributions: new playbooks (`core/*.md`), new adapters (a new AI tool), new prompt templates (`prompts/*.md`), and edits that tighten existing guidance. Keep the six-part Output Contract intact — that's the skill's identity. See `.github/PULL_REQUEST_TEMPLATE.md` for the checklist.
 
